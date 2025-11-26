@@ -1,0 +1,6 @@
+@BakeryShop_HostAddress = http://localhost:5147
+
+GET {{BakeryShop_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
