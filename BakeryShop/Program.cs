@@ -15,8 +15,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 // 1. Kết nối SQL
+// Đổi UseSqlServer thành UseNpgsql
 builder.Services.AddDbContext<BakeryDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // 2. Đăng ký Dependency Injection
 // Cấu trúc: AddScoped<Interface, ClassThucThi>();
