@@ -1,4 +1,5 @@
-﻿using BakeryShopAPI.Data.Repositories;
+﻿using BakeryShopAPI.Data.Entities;
+using BakeryShopAPI.Data.Repositories;
 using BakeryShopAPI.Services.DTOs;
 using BakeryShopAPI.Services.Interfaces;
 
@@ -23,6 +24,17 @@ namespace BakeryShopAPI.Services.Implements
                 Id = c.Id,
                 Name = c.Name
             }).ToList();
+        }
+
+        public async Task CreateCategoryAsync(string name)
+        {
+            var category = new Category { Name = name, Description = "" };
+            await _repo.AddAsync(category);
+        }
+
+        public async Task DeleteCategoryAsync(int id)
+        {
+            await _repo.DeleteAsync(id);
         }
     }
 }   

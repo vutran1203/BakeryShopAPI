@@ -18,9 +18,17 @@ namespace BakeryShopAPI.Services.Implements
 
         public async Task<List<ProductDTO>> GetAllProductsAsync()
         {
-            var data = await _repo.GetAllAsync();
-            // Mapping thủ công từ Entity -> DTO
-            return data.Select(p => new ProductDTO { Name = p.Name, Price = p.Price }).ToList();
+            var products = await _repo.GetAllAsync();
+
+            return products.Select(p => new ProductDTO
+            {
+                Id = p.Id, // <--- ĐẢM BẢO DÒNG NÀY KHÔNG BỊ THIẾU
+                Name = p.Name,
+                Price = p.Price,
+                Description = p.Description,
+                ImageUrl = p.ImageUrl,
+                CategoryName = p.Category?.Name
+            }).ToList();
         }
 
         public async Task CreateProductAsync(ProductCreateDTO dto)

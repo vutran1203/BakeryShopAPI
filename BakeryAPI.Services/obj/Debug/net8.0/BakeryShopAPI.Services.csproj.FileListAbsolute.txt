@@ -13,3 +13,4 @@ C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Services\obj\Debug\net8.0\Baker
 C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Services\obj\Debug\net8.0\refint\BakeryShopAPI.Services.dll
 C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Services\obj\Debug\net8.0\BakeryShopAPI.Services.pdb
 C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Services\obj\Debug\net8.0\ref\BakeryShopAPI.Services.dll
+C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Services\obj\Debug\net8.0\BakeryShopAPI.Services.sourcelink.json

@@ -12,3 +12,4 @@ C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Data\obj\Debug\net8.0\refint\Ba
 C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Data\obj\Debug\net8.0\BakeryShopAPI.Data.pdb
 C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Data\obj\Debug\net8.0\BakeryShopAPI.Data.genruntimeconfig.cache
 C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Data\obj\Debug\net8.0\ref\BakeryShopAPI.Data.dll
+C:\Users\vt412\source\repos\BakeryShop\BakeryAPI.Data\obj\Debug\net8.0\BakeryShopAPI.Data.sourcelink.json

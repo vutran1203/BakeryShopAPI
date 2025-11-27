@@ -16,5 +16,23 @@ namespace BakeryShopAPI.Data.Repositories
         {
             return await _context.Categories.ToListAsync();
         }
+
+        // Hàm AddAsync đã có chưa? Nếu chưa thì thêm vào:
+        public async Task AddAsync(Category category)
+        {
+            _context.Categories.Add(category);
+            await _context.SaveChangesAsync();
+        }
+
+        // Thêm hàm Xóa:
+        public async Task DeleteAsync(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+            if (category != null)
+            {
+                _context.Categories.Remove(category);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

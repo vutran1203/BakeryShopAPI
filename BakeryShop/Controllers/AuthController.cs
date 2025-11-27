@@ -1,4 +1,5 @@
-﻿using BakeryShopAPI.Services.DTOs;
+﻿using BakeryShopAPI.Data.Repositories;
+using BakeryShopAPI.Services.DTOs;
 using BakeryShopAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,12 @@ namespace BakeryShopAPI.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IUserRepository _userRepo;
 
-        public AuthController(IUserService userService)
+        public AuthController(IUserService userService, IUserRepository userRepo)
         {
             _userService = userService;
+            _userRepo = userRepo;
         }
 
         [HttpPost("register")]
@@ -44,8 +47,24 @@ namespace BakeryShopAPI.Controllers
         {
             try
             {
-                var token = await _userService.LoginAsync(loginDto.Username, loginDto.Password);
-                return Ok(new { Token = token }); // Trả về Token cho client
+                // 1. Lấy Token từ Service (Chuỗi string đã mã hóa xong)
+                var tokenString = await _userService.LoginAsync(loginDto.Username, loginDto.Password);
+
+                // 2. Lấy thông tin User từ Database để trả về cho Frontend
+                var user = await _userRepo.GetByUsernameAsync(loginDto.Username);
+
+                // 3. Trả về kết quả gộp
+                return Ok(new
+                {
+                    Token = tokenString, // Vé thông hành
+                    User = new
+                    {
+                        Id = user.Id,
+                        Username = user.Username,
+                        FullName = user.FullName,
+                        Role = user.Role // Frontend cần cái này để phân quyền Admin
+                    }
+                });
             }
             catch (Exception ex)
             {

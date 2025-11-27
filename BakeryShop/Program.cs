@@ -1,6 +1,7 @@
 ﻿using BakeryShopAPI.Data;
 using BakeryShopAPI.Data.Repositories;
 using BakeryShopAPI.Data.Repositories;
+using BakeryShopAPI.Hubs;
 using BakeryShopAPI.Services.Implements;
 using BakeryShopAPI.Services.Implements;
 using BakeryShopAPI.Services.Interfaces;
@@ -91,6 +92,24 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddSignalR();
+
+// Lấy danh sách các Web được phép gọi từ appsettings (hoặc biến môi trường)
+var allowedOrigins = builder.Configuration["AllowedOrigins"]?.Split(",")
+                     ?? new string[] { "http://localhost:5173" };
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        policy =>
+        {
+            policy.WithOrigins(allowedOrigins) // Cho phép danh sách này
+                   .AllowAnyMethod()
+                   .AllowAnyHeader()
+                   .AllowCredentials();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -102,7 +121,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("AllowSpecificOrigin");
+
 app.UseAuthorization();
+
+app.MapHub<NotificationHub>("/hub/notification");
 
 app.MapControllers();
 

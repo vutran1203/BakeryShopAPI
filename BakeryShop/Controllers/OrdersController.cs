@@ -1,7 +1,9 @@
-﻿using BakeryShopAPI.Services.DTOs;
+﻿using BakeryShopAPI.Hubs;
+using BakeryShopAPI.Services.DTOs;
 using BakeryShopAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System.Security.Claims;
 
 namespace BakeryShopAPI.Controllers
@@ -12,10 +14,12 @@ namespace BakeryShopAPI.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _service;
+        private readonly IHubContext<NotificationHub> _hubContext;
 
-        public OrdersController(IOrderService service)
+        public OrdersController(IOrderService service, IHubContext<NotificationHub> hubContext)
         {
             _service = service;
+            _hubContext = hubContext;
         }
 
         [HttpPost]
@@ -28,6 +32,8 @@ namespace BakeryShopAPI.Controllers
                 int userId = int.Parse(userIdString);
 
                 await _service.CreateOrderAsync(userId, orderDto);
+
+                await _hubContext.Clients.All.SendAsync("ReceiveOrder", "Khách vừa đặt đơn hàng mới!");
                 return Ok(new { Message = "Đặt hàng thành công!" });
             }
             catch (Exception ex)
