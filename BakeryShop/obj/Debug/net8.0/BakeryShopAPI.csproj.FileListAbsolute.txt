@@ -127,3 +127,4 @@ C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\BakeryShopAPI
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\BakeryShopAPI.genruntimeconfig.cache
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\ref\BakeryShopAPI.dll
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\BakeryShopAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
