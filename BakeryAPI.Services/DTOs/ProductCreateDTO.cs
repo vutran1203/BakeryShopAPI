@@ -11,7 +11,7 @@ namespace BakeryShopAPI.Services.DTOs
         [Required]
         public decimal Price { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Required]
         public int CategoryId { get; set; }

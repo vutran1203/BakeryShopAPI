@@ -120,10 +120,10 @@ C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\staticwebasse
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\BakerySh.B9062C00.Up2Date
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\BakeryShopAPI.dll
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\refint\BakeryShopAPI.dll
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\BakeryShopAPI.pdb
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\BakeryShopAPI.genruntimeconfig.cache
 C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\ref\BakeryShopAPI.dll
+C:\Users\vt412\source\repos\BakeryShop\BakeryShop\obj\Debug\net8.0\BakeryShopAPI.MvcApplicationPartsAssemblyInfo.cs
