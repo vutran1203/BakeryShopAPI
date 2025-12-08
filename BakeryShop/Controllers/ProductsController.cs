@@ -115,4 +115,20 @@ public class ProductsController : ControllerBase
         await _context.SaveChangesAsync();
         return Ok(new { Message = "Xóa thành công!" });
     }
+
+    [HttpPut("{id}")] // Dùng PUT (hoặc PATCH đều được)
+    public async Task<IActionResult> UpdateProduct(int id, [FromForm] ProductUpdateDTO request)
+    {
+        if (id != request.Id) return BadRequest("ID không khớp");
+
+        try
+        {
+            await _service.UpdateProductAsync(request);
+            return Ok("Cập nhật thành công");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }

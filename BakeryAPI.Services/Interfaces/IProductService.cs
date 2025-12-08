@@ -10,5 +10,7 @@ namespace BakeryShopAPI.Services.Interfaces
         Task<List<ProductDTO>> GetAllProductsAsync();
 
         Task CreateProductAsync(ProductCreateDTO dto);
+
+        Task UpdateProductAsync(ProductUpdateDTO request);
     }
 }
