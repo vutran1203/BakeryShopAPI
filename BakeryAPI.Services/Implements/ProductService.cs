@@ -45,7 +45,7 @@ namespace BakeryShopAPI.Services.Implements
             {
                 Name = dto.Name,
                 Price = dto.Price,
-                Description = dto.Description,
+                Description = string.IsNullOrEmpty(dto.Description) ? "Chưa có mô tả" : dto.Description,
                 CategoryId = dto.CategoryId,
                 ImageUrl = imageUrl // Bây giờ link sẽ là https://res.cloudinary.com/...
             };
