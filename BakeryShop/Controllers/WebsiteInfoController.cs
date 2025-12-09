@@ -33,7 +33,7 @@ public class WebsiteInfoController : ControllerBase
     }
 
     // PUT: Cập nhật thông tin
-    [HttpPut]
+    [HttpPatch]
     public async Task<IActionResult> UpdateInfo([FromForm] WebsiteInfoDTO request)
     {
         var info = await _context.WebsiteInfos.FirstOrDefaultAsync();
