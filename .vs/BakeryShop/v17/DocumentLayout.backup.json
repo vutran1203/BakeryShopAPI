@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B9F298DF-F774-45DE-8678-ED6865D5488A}|BakeryAPI.Services\\BakeryShopAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\bakeryshop\\bakeryapi.services\\dtos\\websiteinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F298DF-F774-45DE-8678-ED6865D5488A}|BakeryAPI.Services\\BakeryShopAPI.Services.csproj|solutionrelative:bakeryapi.services\\dtos\\websiteinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4F82E56F-7B95-4856-8C9C-2C63C5F97647}|BakeryShop\\BakeryShopAPI.csproj|c:\\users\\vt412\\source\\repos\\bakeryshop\\bakeryshop\\controllers\\websiteinfocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F82E56F-7B95-4856-8C9C-2C63C5F97647}|BakeryShop\\BakeryShopAPI.csproj|solutionrelative:bakeryshop\\controllers\\websiteinfocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1B82FBD0-DB9A-4E4D-A455-CF9B9456BAAA}|BakeryAPI.Data\\BakeryShopAPI.Data.csproj|c:\\users\\vt412\\source\\repos\\bakeryshop\\bakeryapi.data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B82FBD0-DB9A-4E4D-A455-CF9B9456BAAA}|BakeryAPI.Data\\BakeryShopAPI.Data.csproj|solutionrelative:bakeryapi.data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9F298DF-F774-45DE-8678-ED6865D5488A}|BakeryAPI.Services\\BakeryShopAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\bakeryshop\\bakeryapi.services\\dtos\\websiteinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9F298DF-F774-45DE-8678-ED6865D5488A}|BakeryAPI.Services\\BakeryShopAPI.Services.csproj|solutionrelative:bakeryapi.services\\dtos\\websiteinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B82FBD0-DB9A-4E4D-A455-CF9B9456BAAA}|BakeryAPI.Data\\BakeryShopAPI.Data.csproj|c:\\users\\vt412\\source\\repos\\bakeryshop\\bakeryapi.data\\entities\\bakerydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -234,18 +234,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Repositories\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "BakeryAPI.Data\\Repositories\\ProductRepository.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Repositories\\ProductRepository.cs",
-              "RelativeToolTip": "BakeryAPI.Data\\Repositories\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T04:12:24.739Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "WebsiteInfo.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Entities\\WebsiteInfo.cs",
               "RelativeDocumentMoniker": "BakeryAPI.Data\\Entities\\WebsiteInfo.cs",
@@ -253,12 +241,11 @@
               "RelativeToolTip": "BakeryAPI.Data\\Entities\\WebsiteInfo.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAzwBoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T04:25:10.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-09T04:25:10.379Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryShop\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "BakeryShop\\Controllers\\ProductsController.cs",
@@ -266,12 +253,11 @@
               "RelativeToolTip": "BakeryShop\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAHYAAAAAAAAAAAAqwEIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T06:20:48.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T06:20:48.216Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Services\\Implements\\ProductService.cs",
               "RelativeDocumentMoniker": "BakeryAPI.Services\\Implements\\ProductService.cs",
@@ -279,12 +265,11 @@
               "RelativeToolTip": "BakeryAPI.Services\\Implements\\ProductService.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAcwFwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T04:19:50.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T04:19:50.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "WebsiteInfoController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryShop\\Controllers\\WebsiteInfoController.cs",
               "RelativeDocumentMoniker": "BakeryShop\\Controllers\\WebsiteInfoController.cs",
@@ -297,15 +282,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "WebsiteInfoDTO.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Services\\DTOs\\WebsiteInfoDTO.cs",
               "RelativeDocumentMoniker": "BakeryAPI.Services\\DTOs\\WebsiteInfoDTO.cs",
               "ToolTip": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Services\\DTOs\\WebsiteInfoDTO.cs",
               "RelativeToolTip": "BakeryAPI.Services\\DTOs\\WebsiteInfoDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwBYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T05:20:05.673Z"
+              "WhenOpened": "2025-12-09T05:20:05.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "BakeryAPI.Data\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "BakeryAPI.Data\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T04:12:24.739Z"
             },
             {
               "$type": "Document",
