@@ -55,6 +55,11 @@ public class WebsiteInfoController : ControllerBase
 
         info.FacebookUrl = request.FacebookUrl ?? info.FacebookUrl;
 
+        info.Theme = request.Theme ?? info.Theme;
+        info.SnowEffect = request.SnowEffect ?? info.SnowEffect;
+
+
+
         // Cập nhật Ảnh (nếu có upload mới)
         if (request.LogoFile != null)
             info.LogoUrl = await _cloudinaryService.UploadImageAsync(request.LogoFile);
@@ -68,4 +73,6 @@ public class WebsiteInfoController : ControllerBase
         await _context.SaveChangesAsync();
         return Ok(info);
     }
+
+
 }

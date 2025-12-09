@@ -25,5 +25,8 @@ namespace BakeryShopAPI.Data.Entities
         public string? AboutUsImageUrl { get; set; }
 
         public string? FacebookUrl { get; set; } = "https://m.me/tiembanhcuamai";
+
+        public string Theme { get; set; } = "default";
+        public bool SnowEffect { get; set; } = false;
     }
 }

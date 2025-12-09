@@ -590,6 +590,12 @@
                   },
                   "FacebookUrl": {
                     "type": "string"
+                  },
+                  "Theme": {
+                    "type": "string"
+                  },
+                  "SnowEffect": {
+                    "type": "boolean"
                   }
                 }
               },
@@ -628,6 +634,12 @@
                   "style": "form"
                 },
                 "FacebookUrl": {
+                  "style": "form"
+                },
+                "Theme": {
+                  "style": "form"
+                },
+                "SnowEffect": {
                   "style": "form"
                 }
               }

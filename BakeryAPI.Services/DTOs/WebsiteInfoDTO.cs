@@ -21,5 +21,8 @@ namespace BakeryShopAPI.Services.DTOs
         public IFormFile? AboutUsImageFile { get; set; }
 
         public string? FacebookUrl { get; set; }
+
+        public string? Theme { get; set; }
+        public bool? SnowEffect { get; set; }
     }
 }

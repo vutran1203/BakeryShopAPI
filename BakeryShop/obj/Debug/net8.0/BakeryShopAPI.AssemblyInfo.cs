@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BakeryShopAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c7c9f6a8dc715b54adeb8dd7502426d4fba69c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e95c8ba78af7671e9b448761e08aa8152fe7c1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BakeryShopAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BakeryShopAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

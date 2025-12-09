@@ -407,6 +407,16 @@
         "Name": "FacebookUrl",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "Theme",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SnowEffect",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
