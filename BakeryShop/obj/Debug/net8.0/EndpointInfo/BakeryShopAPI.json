@@ -291,6 +291,13 @@
             }
           },
           {
+            "name": "isBestSeller",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "page",
             "in": "query",
             "schema": {
@@ -347,6 +354,9 @@
                   "ImageFile": {
                     "type": "string",
                     "format": "binary"
+                  },
+                  "IsBestSeller": {
+                    "type": "boolean"
                   }
                 }
               },
@@ -364,6 +374,9 @@
                   "style": "form"
                 },
                 "ImageFile": {
+                  "style": "form"
+                },
+                "IsBestSeller": {
                   "style": "form"
                 }
               }
@@ -431,6 +444,86 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Price": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "CategoryId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ImageFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "IsBestSeller": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "Price": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "CategoryId": {
+                  "style": "form"
+                },
+                "ImageFile": {
+                  "style": "form"
+                },
+                "IsBestSeller": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -534,6 +627,9 @@
           "categoryName": {
             "type": "string",
             "nullable": true
+          },
+          "isBestSeller": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -584,7 +680,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "apiKey",
-        "description": "Nhập chuỗi Token vào theo định dạng: Bearer {token}",
+        "description": "Nhập token dạng: Bearer {token}",
         "name": "Authorization",
         "in": "header"
       }

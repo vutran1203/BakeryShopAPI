@@ -15,5 +15,7 @@ namespace BakeryShopAPI.Data
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+
+        public DbSet<WebsiteInfo> WebsiteInfos { get; set; }
     }
 }
