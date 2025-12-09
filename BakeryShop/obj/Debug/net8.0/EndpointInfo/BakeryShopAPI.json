@@ -530,6 +530,110 @@
           }
         }
       }
+    },
+    "/api/WebsiteInfo": {
+      "get": {
+        "tags": [
+          "WebsiteInfo"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "WebsiteInfo"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ShopName": {
+                    "type": "string"
+                  },
+                  "Slogan": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "ContactEmail": {
+                    "type": "string"
+                  },
+                  "ContactPhone": {
+                    "type": "string"
+                  },
+                  "FooterContent": {
+                    "type": "string"
+                  },
+                  "AboutUsTitle": {
+                    "type": "string"
+                  },
+                  "AboutUsContent": {
+                    "type": "string"
+                  },
+                  "LogoFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "BannerFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "AboutUsImageFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "ShopName": {
+                  "style": "form"
+                },
+                "Slogan": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "ContactEmail": {
+                  "style": "form"
+                },
+                "ContactPhone": {
+                  "style": "form"
+                },
+                "FooterContent": {
+                  "style": "form"
+                },
+                "AboutUsTitle": {
+                  "style": "form"
+                },
+                "AboutUsContent": {
+                  "style": "form"
+                },
+                "LogoFile": {
+                  "style": "form"
+                },
+                "BannerFile": {
+                  "style": "form"
+                },
+                "AboutUsImageFile": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

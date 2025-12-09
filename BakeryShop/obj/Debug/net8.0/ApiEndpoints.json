@@ -329,5 +329,81 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebsiteInfoController",
+    "Method": "GetInfo",
+    "RelativePath": "api/WebsiteInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebsiteInfoController",
+    "Method": "UpdateInfo",
+    "RelativePath": "api/WebsiteInfo",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ShopName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Slogan",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FooterContent",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AboutUsTitle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AboutUsContent",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LogoFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "BannerFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "AboutUsImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

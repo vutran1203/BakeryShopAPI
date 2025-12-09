@@ -9,17 +9,17 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Kết nối PostgreSQL
+// ==================== DB ====================
 builder.Services.AddDbContext<BakeryDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 2. Đăng ký Repository
+// ==================== Repository ====================
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
-// 3. Đăng ký Service
+// ==================== Services ====================
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
@@ -58,12 +58,12 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 
-// JWT
+// ==================== JWT ====================
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.SaveToken = true;
-        options.RequireHttpsMetadata = false; // Rất quan trọng khi dùng HTTP
+        options.RequireHttpsMetadata = builder.Environment.IsProduction();
         options.TokenValidationParameters = new()
         {
             ValidateIssuer = true,
@@ -77,37 +77,46 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+// ==================== SignalR ====================
 builder.Services.AddSignalR();
 
-// CORS
-var allowedOrigins = builder.Configuration["AllowedOrigins"]?.Split(",")
-                     ?? new string[] { "http://localhost:5173" };
+// ==================== CORS ====================
+var allowedOrigins = builder.Configuration["AllowedOrigins"]?
+    .Split(",", StringSplitOptions.RemoveEmptyEntries)
+    ?? new string[] { "http://localhost:5173" };
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
         policy.WithOrigins(allowedOrigins)
-        .AllowAnyMethod()
-        .AllowAnyHeader()
-        .AllowCredentials()
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials()
     );
 });
 
 var app = builder.Build();
 
-// Swagger
-app.UseSwagger();
-app.UseSwaggerUI();
+// ==================== Swagger ====================
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-// ❌ KHÔNG ĐƯỢC DÙNG TRONG RENDER
-// app.UseHttpsRedirection();
+// ==================== HTTPS (chỉ bật trên Render) ====================
+if (app.Environment.IsProduction())
+{
+    app.UseHttpsRedirection();
+}
 
-// Middlewares
+// ==================== Middlewares ====================
 app.UseCors("AllowSpecificOrigin");
 
-app.UseAuthentication();  // ✔ BẮT BUỘC
+app.UseAuthentication();
 app.UseAuthorization();
 
+// ==================== Endpoints ====================
 app.MapHub<NotificationHub>("/hub/notification");
 app.MapControllers();
 
