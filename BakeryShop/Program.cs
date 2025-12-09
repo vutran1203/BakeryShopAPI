@@ -92,10 +92,13 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials()
+              .SetIsOriginAllowed(_ => true)
     );
 });
 
 var app = builder.Build();
+
+
 
 // ==================== Swagger ====================
 if (app.Environment.IsDevelopment())
@@ -113,8 +116,12 @@ if (app.Environment.IsProduction())
 // ==================== Middlewares ====================
 app.UseCors("AllowSpecificOrigin");
 
+
+
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseWebSockets();
 
 // ==================== Endpoints ====================
 app.MapHub<NotificationHub>("/hub/notification");

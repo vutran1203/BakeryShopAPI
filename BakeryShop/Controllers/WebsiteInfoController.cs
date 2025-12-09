@@ -53,6 +53,8 @@ public class WebsiteInfoController : ControllerBase
         info.AboutUsTitle = request.AboutUsTitle ?? info.AboutUsTitle;
         info.AboutUsContent = request.AboutUsContent ?? info.AboutUsContent;
 
+        info.FacebookUrl = request.FacebookUrl ?? info.FacebookUrl;
+
         // Cập nhật Ảnh (nếu có upload mới)
         if (request.LogoFile != null)
             info.LogoUrl = await _cloudinaryService.UploadImageAsync(request.LogoFile);

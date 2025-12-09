@@ -39,5 +39,18 @@ namespace BakeryShopAPI.Services.Implements
             // Trả về đường dẫn ảnh online (SecureUrl là link https)
             return uploadResult.SecureUrl.ToString();
         }
+
+        public async Task DeleteImageAsync(string publicId)
+        {
+            if (string.IsNullOrEmpty(publicId)) return;
+
+            var deletionParams = new DeletionParams(publicId);
+            var result = await _cloudinary.DestroyAsync(deletionParams);
+
+            if (result.Result == "ok")
+            {
+                // Xóa thành công
+            }
+        }
     }
 }

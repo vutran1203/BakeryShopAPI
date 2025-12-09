@@ -587,6 +587,9 @@
                   "AboutUsImageFile": {
                     "type": "string",
                     "format": "binary"
+                  },
+                  "FacebookUrl": {
+                    "type": "string"
                   }
                 }
               },
@@ -622,6 +625,9 @@
                   "style": "form"
                 },
                 "AboutUsImageFile": {
+                  "style": "form"
+                },
+                "FacebookUrl": {
                   "style": "form"
                 }
               }

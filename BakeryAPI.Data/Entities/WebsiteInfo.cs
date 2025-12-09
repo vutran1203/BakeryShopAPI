@@ -23,5 +23,7 @@ namespace BakeryShopAPI.Data.Entities
         public string? AboutUsTitle { get; set; } = "Về Chúng Tôi";
         public string? AboutUsContent { get; set; } = "Nội dung giới thiệu...";
         public string? AboutUsImageUrl { get; set; }
+
+        public string? FacebookUrl { get; set; } = "https://m.me/tiembanhcuamai";
     }
 }

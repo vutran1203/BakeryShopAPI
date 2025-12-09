@@ -1,5 +1,6 @@
 ﻿using BakeryShopAPI.Data;
 using BakeryShopAPI.Services.DTOs;
+using BakeryShopAPI.Services.Implements;
 using BakeryShopAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +12,13 @@ public class ProductsController : ControllerBase
 {
     private readonly IProductService _service;
     private readonly BakeryDbContext _context;
+    private readonly ICloudinaryService _cloudinaryService;
 
-    public ProductsController(IProductService service, BakeryDbContext context)
+    public ProductsController(IProductService service, BakeryDbContext context, ICloudinaryService cloudinaryService)
     {
         _service = service;
         _context = context;
+        _cloudinaryService = cloudinaryService;
     }
 
     // GET: api/Products?search=...&categoryId=1&page=1...
@@ -116,12 +119,58 @@ public class ProductsController : ControllerBase
         }
     }
 
+    // Hàm này giúp tách Public ID từ URL
+    private string GetPublicIdFromUrl(string url)
+    {
+        if (string.IsNullOrEmpty(url)) return null;
+
+        try
+        {
+            // 1. Chỉ xử lý nếu là link Cloudinary
+            if (!url.Contains("cloudinary.com")) return null;
+
+            // 2. Tách phần mở rộng (.jpg, .png)
+            int lastDotIndex = url.LastIndexOf('.');
+            string urlWithoutExtension = url.Substring(0, lastDotIndex);
+
+            // 3. Tìm vị trí của folder (sau chữ upload/v.../)
+            // Cloudinary thường có dạng .../upload/v123456/FOLDER/NAME
+            // Chúng ta tìm dấu gạch chéo cuối cùng và lùi lại để lấy folder
+
+            // Cách đơn giản nhất: Lấy từ tên folder bạn đặt (bakery-shop-products)
+            // Nếu bạn đổi tên folder trong CloudinaryService thì nhớ đổi ở đây nhé
+            string folderName = "bakery-shop-products";
+            int folderIndex = urlWithoutExtension.IndexOf(folderName);
+
+            if (folderIndex != -1)
+            {
+                return urlWithoutExtension.Substring(folderIndex);
+            }
+
+            return null;
+        }
+        catch
+        {
+            return null; // Nếu lỗi thì bỏ qua, không xóa ảnh
+        }
+    }
+
     [HttpDelete("{id}")]
     [Authorize(Roles = "Admin")] // Chỉ Admin được xóa
     public async Task<IActionResult> Delete(int id)
     {
         var product = await _context.Products.FindAsync(id);
         if (product == null) return NotFound();
+
+        // 👇 BƯỚC 1: Xóa ảnh trên Cloudinary trước
+        if (!string.IsNullOrEmpty(product.ImageUrl))
+        {
+            string publicId = GetPublicIdFromUrl(product.ImageUrl);
+            if (publicId != null)
+            {
+                await _cloudinaryService.DeleteImageAsync(publicId);
+            }
+        }
 
         _context.Products.Remove(product);
         await _context.SaveChangesAsync();
