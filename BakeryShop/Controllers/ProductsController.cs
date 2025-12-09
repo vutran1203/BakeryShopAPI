@@ -27,7 +27,12 @@ public class ProductsController : ControllerBase
         // 1. Lọc theo từ khóa
         if (!string.IsNullOrEmpty(search))
         {
-            query = query.Where(p => p.Name.Contains(search) || p.Description.Contains(search));
+            // Bước 1: Đưa từ khóa tìm kiếm về chữ thường
+            var searchLower = search.ToLower();
+
+            // Bước 2: Đưa cả Tên và Mô tả trong DB về chữ thường rồi mới so sánh
+            query = query.Where(p => p.Name.ToLower().Contains(searchLower)
+                                  || p.Description.ToLower().Contains(searchLower));
         }
 
         // 2. Lọc theo danh mục (NẾU CÓ)
