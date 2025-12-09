@@ -18,5 +18,7 @@ namespace BakeryShopAPI.Services.DTOs
 
         // Đây là chỗ hứng file ảnh gửi lên
         public IFormFile ImageFile { get; set; }
+
+        public bool IsBestSeller { get; set; } = false; // Mặc định là false
     }
 }

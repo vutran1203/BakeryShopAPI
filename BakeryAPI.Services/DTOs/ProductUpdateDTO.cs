@@ -10,5 +10,7 @@ namespace BakeryShopAPI.Services.DTOs
         public string? Description { get; set; }
         public int? CategoryId { get; set; }
         public IFormFile? ImageFile { get; set; } // Ảnh mới (nếu có)
+
+        public bool? IsBestSeller { get; set; } // Có dấu ?
     }
 }

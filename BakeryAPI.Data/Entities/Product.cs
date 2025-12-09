@@ -15,5 +15,7 @@ namespace BakeryShopAPI.Data.Entities
 
         public int CategoryId { get; set; } // Khóa ngoại (bắt buộc có)
         public Category Category { get; set; } // Để truy xuất thông tin danh mục
+
+        public bool IsBestSeller { get; set; } = false; // Mặc định là false
     }
 }

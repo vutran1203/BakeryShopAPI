@@ -51,7 +51,8 @@ namespace BakeryShopAPI.Services.Implements
                 Price = dto.Price,
                 Description = string.IsNullOrEmpty(dto.Description) ? "Chưa có mô tả" : dto.Description,
                 CategoryId = dto.CategoryId,
-                ImageUrl = imageUrl // Bây giờ link sẽ là https://res.cloudinary.com/...
+                ImageUrl = imageUrl,
+                IsBestSeller = dto.IsBestSeller
             };
 
             await _repo.AddAsync(product);
@@ -88,6 +89,8 @@ namespace BakeryShopAPI.Services.Implements
                 var newImageUrl = await _cloudinaryService.UploadImageAsync(request.ImageFile);
                 product.ImageUrl = newImageUrl;
             }
+
+            product.IsBestSeller = (bool)request.IsBestSeller;
 
             // 4. Lưu thay đổi
             _context.Products.Update(product);

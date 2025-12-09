@@ -20,7 +20,7 @@ public class ProductsController : ControllerBase
 
     // GET: api/Products?search=...&categoryId=1&page=1...
     [HttpGet]
-    public async Task<IActionResult> GetProducts(string? search, int? categoryId, int page = 1, int pageSize = 12)
+    public async Task<IActionResult> GetProducts(string? search, int? categoryId, bool? isBestSeller, int page = 1, int pageSize = 12)
     {
         var query = _context.Products.Include(p => p.Category).AsQueryable();
 
@@ -41,6 +41,12 @@ public class ProductsController : ControllerBase
             query = query.Where(p => p.CategoryId == categoryId.Value);
         }
 
+        // 👇 THÊM ĐOẠN NÀY: Lọc Best Seller
+        if (isBestSeller.HasValue && isBestSeller.Value == true)
+        {
+            query = query.Where(p => p.IsBestSeller == true);
+        }
+
         // ... (Đoạn tính toán Total và Phân trang giữ nguyên) ...
         int totalItems = await query.CountAsync();
 
@@ -57,7 +63,8 @@ public class ProductsController : ControllerBase
             Price = p.Price,
             Description = p.Description,
             ImageUrl = p.ImageUrl,
-            CategoryName = p.Category?.Name
+            CategoryName = p.Category?.Name,
+            IsBestSeller = p.IsBestSeller
         }).ToList();
 
         return Ok(new
