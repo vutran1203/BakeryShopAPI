@@ -40,14 +40,18 @@ public class WebsiteInfoController : ControllerBase
         if (info == null) return NotFound();
 
         // Cập nhật Text
-        info.ShopName = request.ShopName;
-        info.Slogan = request.Slogan;
-        info.Address = request.Address;
-        info.ContactEmail = request.ContactEmail;
-        info.ContactPhone = request.ContactPhone;
-        info.FooterContent = request.FooterContent;
-        info.AboutUsTitle = request.AboutUsTitle;
-        info.AboutUsContent = request.AboutUsContent;
+        info.ShopName = request.ShopName ?? info.ShopName;
+        info.Slogan = request.Slogan ?? info.Slogan;
+
+        // Các trường bắt buộc (Không bao giờ bị lỗi null nữa vì luôn có fallback giá trị cũ)
+        info.Address = request.Address ?? info.Address;
+        info.ContactEmail = request.ContactEmail ?? info.ContactEmail;
+        info.ContactPhone = request.ContactPhone ?? info.ContactPhone;
+        info.FooterContent = request.FooterContent ?? info.FooterContent;
+
+        // Các trường tùy chọn
+        info.AboutUsTitle = request.AboutUsTitle ?? info.AboutUsTitle;
+        info.AboutUsContent = request.AboutUsContent ?? info.AboutUsContent;
 
         // Cập nhật Ảnh (nếu có upload mới)
         if (request.LogoFile != null)
