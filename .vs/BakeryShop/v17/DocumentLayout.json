@@ -241,20 +241,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "20251209182507_Addl.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Migrations\\20251209182507_Addl.cs",
-              "RelativeDocumentMoniker": "BakeryAPI.Data\\Migrations\\20251209182507_Addl.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Migrations\\20251209182507_Addl.cs",
-              "RelativeToolTip": "BakeryAPI.Data\\Migrations\\20251209182507_Addl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T18:25:07.626Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -277,8 +265,32 @@
               "RelativeToolTip": "BakeryShop\\Controllers\\WebsiteInfoController.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAcwDkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T05:20:19.258Z",
+              "WhenOpened": "2025-12-09T05:20:19.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryShop\\Program.cs",
+              "RelativeDocumentMoniker": "BakeryShop\\Program.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryShop\\Program.cs",
+              "RelativeToolTip": "BakeryShop\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T06:19:16.773Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "20251209182507_Addl.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Migrations\\20251209182507_Addl.cs",
+              "RelativeDocumentMoniker": "BakeryAPI.Data\\Migrations\\20251209182507_Addl.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryAPI.Data\\Migrations\\20251209182507_Addl.cs",
+              "RelativeToolTip": "BakeryAPI.Data\\Migrations\\20251209182507_Addl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T18:25:07.626Z"
             },
             {
               "$type": "Document",
@@ -291,19 +303,6 @@
               "ViewState": "AgIAAA8AAAAAAAAAAAAowB8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-09T04:25:10.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryShop\\Program.cs",
-              "RelativeDocumentMoniker": "BakeryShop\\Program.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\BakeryShop\\BakeryShop\\Program.cs",
-              "RelativeToolTip": "BakeryShop\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T06:19:16.773Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
