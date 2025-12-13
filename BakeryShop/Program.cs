@@ -116,6 +116,8 @@ if (app.Environment.IsDevelopment())
 // ==================== HTTPS (chỉ bật trên Render) ====================
 if (app.Environment.IsProduction())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.UseHttpsRedirection();
 }
 
